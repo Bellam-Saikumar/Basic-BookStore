@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-color:beige;
+           margin: 0%;
+       }
+       .navigation{
+           background:black;
+           display: flex;
+           justify-content: space-around;
+       }
+       .navigation a{
+           font-size: 2.6rem;
+           text-decoration: none;
+           color:white
+       }
+       .catalog{
+           padding:2%;
+           display: grid;
+           grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+           gap: 20px;
+          
+       }
+       .catalog div{
+           box-shadow: 1px 1px 3px rgba(0,0,0,10);
+           padding:9%;
+          
+       }
+       .rate{
+           font-size:1.2rem;
+       }
+       .btn{
+           border-top: black;
+           width: 40%;
+           padding: 3%;
+           cursor:pointer;
+           background-color:palevioletred ;
+       } 
+       .btn:hover{
+        background-color: hotpink;
+       }
+       img{
+        height: 100px;
+        width:100px;
+
+       }
+       .item:hover{
+        background-color:rgb(232, 227, 201);
+
+       }
+   </style>
+</head>
+<body>
+   
+   <section class="catalog">
+       <div class="item">
+           <img width="50%" src="loginpage_ref.jpeg" />
+           <p>iPhone 14</p>
+           <p  class="rate">90,000</p>
+           <p>Every iPhone 14 (PRODUCT)RED purchase now contributes directly to the Global Fund to combat COVID‑19. footnote</p>
+           <button class="btn">Add to Cart</button>
+       </div>
+       <div  class="item">
+        <img width="40%" src="loginpage_ref.jpeg"/>
+        <p>iPhone 14</p>
+        <p  class="rate">90,000</p>
+        <p>Every iPhone 14 (PRODUCT)RED purchase now contributes directly to the Global Fund to combat COVID‑19. footnote</p>
+        <button class="btn">Add to Cart</button>
+    </div>
+    <div  class="item">
+        <img width="40%" src="loginpage_ref.jpeg"/>
+        <p>iPhone 14</p>
+        <p  class="rate">90,000</p>
+        <p>Every iPhone 14 (PRODUCT)RED purchase now contributes directly to the Global Fund to combat COVID‑19. footnote</p>
+        <button class="btn">Add to Cart</button>
+    </div>
+    <div  class="item">
+        <img width="40%" src="loginpage_ref.jpeg"/>
+        <p>iPhone 14</p>
+        <p  class="rate">90,000</p>
+        <p>Every iPhone 14 (PRODUCT)RED purchase now contributes directly to the Global Fund to combat COVID‑19. footnote</p>
+        <button class="btn">Add to Cart</button>
+    </div>
+    <div  class="item">
+        <img width="40%" src="loginpage_ref.jpeg"/>
+        <p>iPhone 14</p>
+        <p  class="rate">90,000</p>
+        <p>Every iPhone 14 (PRODUCT)RED purchase now contributes directly to the Global Fund to combat COVID‑19. footnote</p>
+        <button class="btn">Add to Cart</button>
+    </div>
+    <div  class="item">
+        <img width="40%" src="loginpage_ref.jpeg"/>
+        <p>iPhone 14</p>
+        <p  class="rate">90,000</p>
+        <p>Every iPhone 14 (PRODUCT)RED purchase now contributes directly to the Global Fund to combat COVID‑19. footnote</p>
+        <button class="btn">Add to Cart</button>
+    </div>
+    <div  class="item">
+        <img width="40%" src="loginpage_ref.jpeg"/>
+        <p>iPhone 14</p>
+        <p  class="rate">90,000</p>
+        <p>Every iPhone 14 (PRODUCT)RED purchase now contributes directly to the Global Fund to combat COVID‑19. footnote</p>
+        <button class="btn">Add to Cart</button>
+    </div>
+    
+      
+   </section>    
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Order Page</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 2px;
+    }
+
+    .order-container {
+        max-width: 800px;
+        margin: 20px auto;
+
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .book-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .book {
+        width: 30%;
+        background-color: #f9f9f9;
+        padding: 10px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+    }
+
+    .book img {
+        max-width: 50%;
+        height: min-content;
+    }
+
+    button#place-order-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    button#place-order-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+
+    <header>
+        <h1>Book Store - Order Page</h1>
+    </header>
+    <div class="order-container">
+        <h2>Your Selected Books</h2>
+        <div class="book-list">
+           
+            <div class="book">
+                <img src="loginpage_ref.jpeg" alt="Book 1">
+                <h3>Book Title 1</h3>
+                <p>Author: Author Name 1</p>
+                <p>Price: $19.99</p>
+            </div>
+            <div class="book">
+                <img src="loginpage_ref.jpeg" alt="Book 2">
+                <h3>Book Title 2</h3>
+                <p>Author: Author Name 2</p>
+                <p>Price: $14.99</p>
+            </div>
+           
+        </div>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Total Price: $34.98</p>
+            <a href="payment.html">
+                <button id="place-order-button">Place Order</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html> -->

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        .align {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .button {
+            background-color: rgb(130, 201, 201);
+            width: 13vw;
+            color: rgb(14, 1, 1);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 2%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            border-color: black;
+        }
+
+        .button:hover {
+            outline-offset: none;
+        }
+
+        .register * {
+            margin-bottom: 2%;
+
+
+        }
+
+        .register {
+            margin-top: 3%;
+            margin-left: 0;
+            width: 35%;
+            background-color: rgb(174, 167, 67);
+            margin: auto;
+            margin-top: 4%;
+            padding: 3%;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgb(4, 39, 39);
+            border-width: 2px;
+
+
+        }
+
+        .register div input {
+            padding: 2%;
+            width: 30vw;
+        }
+
+        
+
+        .heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 15vh;
+            font-weight: 700;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .register div input {
+            padding: 3%;
+            width: 30vw;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <script>
+        function validateForm() {
+            // Name Validation
+            var name = document.getElementById('name').value;
+            if (!/^[a-zA-Z ]+$/.test(name)) {
+                alert('Please enter a valid name more than 4 characters.');
+                return false;
+            }
+
+            // Email Validation
+            var email = document.getElementById('email1').value;
+            if (! /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            var password = document.getElementById('password').value;
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return false;
+            }
+
+            // Confirm Password Validation
+            var confirmPasswordd = document.getElementById('confirmpassword').value;
+            if (confirmPasswordd !== password) {
+                alert('Passwords do not match.');
+                return false;
+            }
+
+            // If all validations pass, the form will be submitted
+            alert('Registration successful!');
+            return true;
+        }
+
+        
+    </script>
+
+
+    <form onsubmit="return validateForm();">
+        <div class="align">
+
+            <section class="register">
+                <div class="heading">
+                    <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif">REGISTRATION</h1>
+                </div>
+                <div>
+                    <input id="name" placeholder="Enter your name" />
+                </div>
+                <div>
+                    <input id="email1" placeholder="Enter email ID" />
+                </div>
+                <div>
+                    <input type="password" id="password" placeholder="Enter Password" />
+                </div>
+                <div>
+                    <input type="password" id="confirmpassword" placeholder="Enter Conformed Password" />
+                </div>
+                <div>
+                    <a href="login.html">
+                        <button class="button" type="submit">Register </button>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </form>
+</body>
+
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Amozone Book Store</title>
+	<style>
+		.navigation a {
+			font-size: 2.5rem;
+			text-decoration: none;
+			color: white;
+		}
+		.navigation {
+			background-color: black;
+			display: flex;
+			justify-content: space-around;
+		}
+	</style>
+</head>
+<frameset rows="12% ,88%">
+	<frame scrolling=no name="top" src="topframe.html" />
+	<frameset cols="10%,*">
+		<frame scrolling=no name="leftframe" src="leftframe.html" />
+		<frame name="right" src="rightframe.html" />
+	</frameset>
+	<noframes>
+
+		<body>The browser you are working does
+			not support frames.</body>
+	</noframes>
+</frameset>
+</html>

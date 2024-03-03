@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<style>
+    /* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    main {
+        max-width: 800px;                           
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-info {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .profile-picture img {
+        max-width: 150px;
+        border: 2px solid #abb700;
+        border-radius: 50%;
+    }
+
+    .user-details p {
+        margin: 10px 5px;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+
+    .edit-form {
+        display: none;
+    }
+
+    .edit-form input {
+        margin: 1.5%;
+        display: grid;
+    }
+
+    .edit {
+        display: flex;
+        justify-content: left;
+        font-size: 12px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: aquamarine;
+        border: black;
+        border-radius: 3px;
+        margin-right: 8%;
+    }
+
+    .button:hover {
+        background-color: rgb(131, 214, 186);
+    }
+</style>
+
+<body>
+    <header>
+        <h1>User Profile</h1>
+    </header>
+    <main>
+        <section class="user-info">
+            <h2>User Information</h2>
+            <div class="profile-picture">
+                <img src="img/profileimg.png" alt="User Profile Picture">
+            </div>
+            <div class="user-details">
+                <p><strong>Name:</strong> <span id="name"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Location:</strong> <span id="location"></span></p>
+            </div>
+        </section>
+
+        <div class="edit" onclick="toggleEdit()">
+            <button class="button">Edit Profile</button>
+            <a href="cart.html">
+                <button class="button">View Orders</button>
+            </a>
+        </div>
+
+        <form class="edit-form" onsubmit="saveChanges(); return false;">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName">
+
+            <label for="editEmail">Email:</label>
+            <input type="email" id="editEmail">
+
+            <label for="editLocation">Location:</label>
+            <input type="text" id="editLocation">
+
+            <button class="button" type="submit">Save Changes</button>
+        </form>
+    </main>
+    <script>
+        // Check if user data exists in localStorage
+        const userData = JSON.parse(localStorage.getItem('userData')) || {};
+
+        // Populate user data on page load
+        document.getElementById('name').innerText = userData.name || '';
+        document.getElementById('email').innerText = userData.email || '';
+        document.getElementById('location').innerText = userData.location || '';
+        
+        function toggleEdit() {
+            const userDetails = document.querySelector('.user-details');
+            const editForm = document.querySelector('.edit-form');
+
+            userDetails.style.display = 'none';
+            editForm.style.display = 'block';
+        }
+
+        function saveChanges() {
+            const name = document.getElementById('editName').value;
+            const email = document.getElementById('editEmail').value;
+            const location = document.getElementById('editLocation').value;
+
+            // Update displayed user data
+            document.getElementById('name').innerText = name;
+            document.getElementById('email').innerText = email;
+            document.getElementById('location').innerText = location;
+
+            // Save user data to localStorage
+            const newData = {
+                name,
+                email,
+                location
+            };
+            localStorage.setItem('userData', JSON.stringify(newData));
+
+            const userDetails = document.querySelector('.user-details');
+            const editForm = document.querySelector('.edit-form');
+
+            userDetails.style.display = 'block';
+            editForm.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
